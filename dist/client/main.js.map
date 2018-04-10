@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../client/main.js"],"names":[],"mappings":";;;;qBAAkB,OAAO;;;;wBACJ,WAAW;;;;AAEhC,sBAAS,MAAM,CACX;;;;CAAc,EACd,QAAQ,CAAC,cAAc,CAAC,aAAa,CAAC,CACzC,CAAA","file":"main.js","sourcesContent":["import React from 'react';\nimport ReactDOM from 'react-dom';\n\nReactDOM.render(\n    <h3>Notes</h3>,\n    document.getElementById('mount-point')\n)\n"]}

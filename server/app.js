@@ -22,6 +22,9 @@ app.post('/notes', (req, res) => {
 app.delete('/notes/:id', (req, res) => {
     db.deleteNote(req.params.id).then(data => res.send(data));
 });
+app.post('/notesUpdateSendData', (req, res) => {
+    db.updateNote(req.body).then(data => res.send(data));
+});
 
 const server = app.listen(serverPort, () => {
     console.log(`Server is up and running on port ${serverPort}!!!`);

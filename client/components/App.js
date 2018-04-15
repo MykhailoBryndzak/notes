@@ -18,21 +18,21 @@ const App = React.createClass({
     getInitialState() {
         return getStateFromFlux();
     },
-
     componentWillMount() {
         NoteActions.loadNotes();
     },
-
     componentDidMount() {
         NoteStore.addChangeListener(this._onChange)
     },
-
     componentWillUnmount() {
         NoteStore.removeChangeListener(this._onChage)
     },
-
     handleNoteAdd(data) {
         NoteActions.createNote(data);
+    },
+    handleNoteUpdate(data, spendTime) {
+        data.spendTime = spendTime;
+        NoteActions.updateNote(data);
     },
     handleNoteDelete(note) {
         NoteActions.deleteNote(note.id);
@@ -43,7 +43,11 @@ const App = React.createClass({
             <div className="App">
                 <h2 className="App__header">Notes App</h2>
                 <NoteEditor onNoteAdd={this.handleNoteAdd}/>
-                <NoteGrid notes={this.state.notes} onNoteDelete={this.handleNoteDelete}/>
+                <NoteGrid
+                    notes={this.state.notes}
+                    onNoteDelete={this.handleNoteDelete}
+                    onNoteUpdate={this.handleNoteUpdate}
+                />
             </div>
         );
     },

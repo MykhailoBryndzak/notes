@@ -20,21 +20,14 @@ export function creteNote(data) {
         text: data.text,
         color: data.color,
         createAt: new Date(),
-        spendTime: data.spendTime
+        spendTime: 0
     }) ;
 
     return note.save();
 }
 
 export function updateNote(data) {
-    const note = new Note({
-        title: data.title,
-        text: data.text,
-        color: data.color,
-        createAt: new Date()
-    }) ;
-
-    return note.save();
+    return Note.findByIdAndUpdate(data.id, {spendTime: data.spendTime});
 }
 
 export function deleteNote(id) {

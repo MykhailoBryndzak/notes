@@ -19,7 +19,7 @@ const Note = React.createClass({
                 }
                 <div className="Note__text">{this.props.children}</div>
 
-                <SpendTime/>
+                <SpendTime props={this.props} spendTime={this.props.spendTime} onUpdate={this.props.onUpdate}/>
             </div>
         );
     }

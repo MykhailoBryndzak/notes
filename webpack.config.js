@@ -23,7 +23,7 @@ module.exports = {
                 exclude: [/node_modules/, /public/]
             }, {
                 test: /\.jsx$/,
-                loader: "react-hot!babel",
+                loader: "react-hot!babel-loader",
                 exclude: [/node_modules/, /public/]
             }, {
                 test: /\.gif$/,

@@ -23,7 +23,9 @@ const NoteGrid = React.createClass({
                         <Note
                             key={note.id}
                             title={note.title}
+                            spendTime={note.spendTime}
                             onDelete={this.props.onNoteDelete.bind(null, note)}
+                            onUpdate={this.props.onNoteUpdate.bind(null, note)}
                             color={note.color}
                         >
                             {note.text}

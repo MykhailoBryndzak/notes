@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Note.less';
-import SpendTime from './SpendTime';
+import SpendTime from '../spendTime/SpendTime';
 
 const Note = React.createClass({
     render() {

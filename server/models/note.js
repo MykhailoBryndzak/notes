@@ -7,7 +7,8 @@ const NoteSchema = new Schema({
     text: {type: String, required: true},
     color: {type: String},
     createAt: {type: Date},
-    spendTime: {type: Number}
+    spendTime: {type: Number},
+    isLongTerm: {type: Boolean}
 });
 
 const Note = mongoose.model('Note', NoteSchema);

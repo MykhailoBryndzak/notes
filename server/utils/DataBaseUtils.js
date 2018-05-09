@@ -20,7 +20,8 @@ export function creteNote(data) {
         text: data.text,
         color: data.color,
         createAt: new Date(),
-        spendTime: 0
+        spendTime: 0,
+        isLongTerm: data.isLongTerm
     }) ;
 
     return note.save();

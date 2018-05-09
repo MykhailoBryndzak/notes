@@ -28,10 +28,10 @@
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
-    "babel": "^5.8.38",
+    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
-    "babel-core": "^5.8.38",
-    "babel-loader": "^5.4.2",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
     "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.6.1",

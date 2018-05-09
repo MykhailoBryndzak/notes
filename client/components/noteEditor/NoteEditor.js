@@ -1,15 +1,18 @@
 import React from 'react';
 
 import './NoteEditor.less'
-import ColorPiker from './ColorPiker';
+import ColorPiker from '../colorPiker/ColorPiker';
+
+const initialNote = {
+    title: '',
+    text: '',
+    color: '#fff',
+    isLongTerm: false
+}
 
 const NoteEditor = React.createClass({
     getInitialState() {
-      return {
-          title: '',
-          text: '',
-          color: '#fff'
-      };
+        return initialNote
     },
 
     handleTextChange(event) {
@@ -17,6 +20,9 @@ const NoteEditor = React.createClass({
     },
     handleTitleChange(event) {
         this.setState({title: event.target.value});
+    },
+    handleIsLongTermChange(event) {
+        this.setState({isLongTerm: event.target.checked});
     },
     handleColorChange(color) {
         this.setState({color});
@@ -26,11 +32,14 @@ const NoteEditor = React.createClass({
       const newNote = {
           title: this.state.title,
           text: this.state.text,
-          color: this.state.color
+          color: this.state.color,
+          isLongTerm: this.state.isLongTerm
       };
 
       this.props.onNoteAdd(newNote);
-      this.setState({text: '', title: '', color: '#fff'})
+
+      this.setState(initialNote);
+      document.getElementById('NoteEditor__isLongTerm').checked = false;
     },
 
     render() {
@@ -43,6 +52,15 @@ const NoteEditor = React.createClass({
                     value={this.state.title}
                     onChange={this.handleTitleChange}
                 />
+                <label className='NoteEditor__isLongTerm'>
+                    Long term?
+                    <input
+                        type='checkbox'
+                        id='NoteEditor__isLongTerm'
+                        title='Is it long term task?'
+                        onChange={this.handleIsLongTermChange}
+                    />
+                </label>
                 <textarea
                     placeholder="Enter Note Text"
                     rows={5}

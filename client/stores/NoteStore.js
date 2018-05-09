@@ -16,7 +16,8 @@ function formatNote(note) {
         text: note.text,
         color: note.color || '#fff',
         createdAt: note.createAt,
-        spendTime: note.spendTime
+        spendTime: note.spendTime,
+        isLongTerm: note.isLongTerm
     };
 }
 
@@ -26,6 +27,12 @@ const TasksStore = Object.assign({}, EventEmitter.prototype, {
     },
     getNotes() {
         return _notes;
+    },
+    getLongTermTasks() {
+        return _notes.filter(e => e.isLongTerm === true)
+    },
+    getShortTermTasks() {
+        return _notes.filter(e => e.isLongTerm === false)
     },
     emitChange() {
         this.emit(CHANGE_EVENT);

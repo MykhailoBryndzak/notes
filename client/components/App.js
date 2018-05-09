@@ -4,13 +4,16 @@ import NoteStore from '../stores/NoteStore';
 import NoteActions from '../actions/NoteActions';
 import './App.less';
 
-import NoteGrid from './NoteGrid';
-import NoteEditor from './NoteEditor';
+import NoteGridLongTerm from './noteGridLongTerm/NoteGridLongTerm';
+import NoteGridShortTerm from './noteGridShortTerm/NoteGridShortTerm';
+import NoteEditor from './noteEditor/NoteEditor';
 
 function getStateFromFlux() {
     return {
         isLoading: NoteStore.isLoading(),
-        notes: NoteStore.getNotes()
+        notes: NoteStore.getNotes(),
+        longTermTasks: NoteStore.getLongTermTasks(),
+        shortTermTasks: NoteStore.getShortTermTasks()
     }
 }
 
@@ -43,8 +46,16 @@ const App = React.createClass({
             <div className="App">
                 <h2 className="App__header">Notes App</h2>
                 <NoteEditor onNoteAdd={this.handleNoteAdd}/>
-                <NoteGrid
-                    notes={this.state.notes}
+
+                <NoteGridShortTerm
+                    longTermTasks={this.state.longTermTasks}
+                    shortTermTasks={this.state.shortTermTasks}
+                    onNoteDelete={this.handleNoteDelete}
+                    onNoteUpdate={this.handleNoteUpdate}
+                />
+                <NoteGridLongTerm
+                    longTermTasks={this.state.longTermTasks}
+                    shortTermTasks={this.state.shortTermTasks}
                     onNoteDelete={this.handleNoteDelete}
                     onNoteUpdate={this.handleNoteUpdate}
                 />

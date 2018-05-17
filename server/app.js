@@ -8,7 +8,7 @@ import {serverPort} from '../etc/configs.json';
 
 import * as db from './utils/DataBaseUtils';
 
-db.setUpConnection();
+// db.setUpConnection();
 
 const app = express();
 

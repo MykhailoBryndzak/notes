@@ -1,14 +1,21 @@
-"use strict";
+'use strict';
 
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
     entry: "./client/main.js",
     output: {
-        path: __dirname + "public/build/",
-        publicPath: "build/",
+        path: path.resolve(__dirname, 'public/build'),
         filename: "bundle.js"
     },
+    resolve: {
+        extensions: ['.js']
+    },
+    // Activate source maps for the bundles in order to preserve the original
+    // source when the user debugs the application
+    devtool: 'source-map',
+
     module: {
         loaders: [{
             test: /\.js$/,

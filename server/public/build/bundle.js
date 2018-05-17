@@ -13051,29 +13051,41 @@ module.exports = ReactElementValidator;
 
 /***/ }),
 /* 124 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flux__ = __webpack_require__(235);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_flux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_flux__);
 
 
-/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_0_flux__["Dispatcher"]());
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _flux = __webpack_require__(235);
+
+exports.default = new _flux.Dispatcher();
 
 /***/ }),
 /* 125 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_keymirror__ = __webpack_require__(237);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_keymirror___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_keymirror__);
 
 
-/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_keymirror___default()({
+Object.defineProperty(exports, "__esModule", {
+   value: true
+});
+
+var _keymirror = __webpack_require__(237);
+
+var _keymirror2 = _interopRequireDefault(_keymirror);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _keymirror2.default)({
    LOAD_NOTES_REQUEST: null,
    LOAD_NOTES_SUCCESS: null,
    LOAD_NOTES_FAIL: null
-}));
+});
 
 /***/ }),
 /* 126 */
@@ -14566,65 +14578,78 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 /***/ }),
 /* 158 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Note_less__ = __webpack_require__(382);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Note_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Note_less__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__spendTime_SpendTime__ = __webpack_require__(384);
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _react = __webpack_require__(9);
 
+var _react2 = _interopRequireDefault(_react);
 
-const Note = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
-    render() {
-        const style = { backgroundColor: this.props.color };
+__webpack_require__(382);
 
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+var _SpendTime = __webpack_require__(384);
+
+var _SpendTime2 = _interopRequireDefault(_SpendTime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Note = _react2.default.createClass({
+    render: function render() {
+        var style = { backgroundColor: this.props.color };
+
+        return _react2.default.createElement(
             'div',
             { className: 'Note', style: style },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            _react2.default.createElement(
                 'span',
                 { className: 'Note__del-icon', onClick: this.props.onDelete },
                 ' x '
             ),
-            this.props.title ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            this.props.title ? _react2.default.createElement(
                 'h4',
                 { className: 'Note__title' },
                 this.props.title
             ) : null,
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            _react2.default.createElement(
                 'div',
                 { className: 'Note__text' },
                 this.props.children
             ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__spendTime_SpendTime__["a" /* default */], { props: this.props, spendTime: this.props.spendTime, onUpdate: this.props.onUpdate })
+            _react2.default.createElement(_SpendTime2.default, { props: this.props, spendTime: this.props.spendTime, onUpdate: this.props.onUpdate })
         );
     }
 });
 
-/* harmony default export */ __webpack_exports__["a"] = (Note);
+exports.default = Note;
 
 /***/ }),
 /* 159 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(231);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_App__ = __webpack_require__(232);
 
 
+var _react = __webpack_require__(9);
 
+var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = __webpack_require__(231);
 
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_App__["a" /* default */], null), document.getElementById('mount-point'));
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _App = __webpack_require__(232);
+
+var _App2 = _interopRequireDefault(_App);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('mount-point'));
 
 /***/ }),
 /* 160 */
@@ -23707,78 +23732,92 @@ module.exports = __webpack_require__(90);
 
 /***/ }),
 /* 232 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__stores_NoteStore__ = __webpack_require__(233);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions_NoteActions__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__App_less__ = __webpack_require__(260);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__App_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__App_less__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__noteGridLongTerm_NoteGridLongTerm__ = __webpack_require__(263);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__noteGridShortTerm_NoteGridShortTerm__ = __webpack_require__(391);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__noteEditor_NoteEditor__ = __webpack_require__(394);
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _react = __webpack_require__(9);
 
+var _react2 = _interopRequireDefault(_react);
 
+var _NoteStore = __webpack_require__(233);
 
+var _NoteStore2 = _interopRequireDefault(_NoteStore);
 
+var _NoteActions = __webpack_require__(238);
 
+var _NoteActions2 = _interopRequireDefault(_NoteActions);
 
+__webpack_require__(260);
+
+var _NoteGridLongTerm = __webpack_require__(263);
+
+var _NoteGridLongTerm2 = _interopRequireDefault(_NoteGridLongTerm);
+
+var _NoteGridShortTerm = __webpack_require__(391);
+
+var _NoteGridShortTerm2 = _interopRequireDefault(_NoteGridShortTerm);
+
+var _NoteEditor = __webpack_require__(394);
+
+var _NoteEditor2 = _interopRequireDefault(_NoteEditor);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function getStateFromFlux() {
     return {
-        isLoading: __WEBPACK_IMPORTED_MODULE_1__stores_NoteStore__["a" /* default */].isLoading(),
-        notes: __WEBPACK_IMPORTED_MODULE_1__stores_NoteStore__["a" /* default */].getNotes(),
-        longTermTasks: __WEBPACK_IMPORTED_MODULE_1__stores_NoteStore__["a" /* default */].getLongTermTasks(),
-        shortTermTasks: __WEBPACK_IMPORTED_MODULE_1__stores_NoteStore__["a" /* default */].getShortTermTasks()
+        isLoading: _NoteStore2.default.isLoading(),
+        notes: _NoteStore2.default.getNotes(),
+        longTermTasks: _NoteStore2.default.getLongTermTasks(),
+        shortTermTasks: _NoteStore2.default.getShortTermTasks()
     };
 }
 
-const App = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
-    getInitialState() {
+var App = _react2.default.createClass({
+    getInitialState: function getInitialState() {
         return getStateFromFlux();
     },
-    componentWillMount() {
-        __WEBPACK_IMPORTED_MODULE_2__actions_NoteActions__["a" /* default */].loadNotes();
+    componentWillMount: function componentWillMount() {
+        _NoteActions2.default.loadNotes();
     },
-    componentDidMount() {
-        __WEBPACK_IMPORTED_MODULE_1__stores_NoteStore__["a" /* default */].addChangeListener(this._onChange);
+    componentDidMount: function componentDidMount() {
+        _NoteStore2.default.addChangeListener(this._onChange);
     },
-    componentWillUnmount() {
-        __WEBPACK_IMPORTED_MODULE_1__stores_NoteStore__["a" /* default */].removeChangeListener(this._onChage);
+    componentWillUnmount: function componentWillUnmount() {
+        _NoteStore2.default.removeChangeListener(this._onChage);
     },
-    handleNoteAdd(data) {
-        __WEBPACK_IMPORTED_MODULE_2__actions_NoteActions__["a" /* default */].createNote(data);
+    handleNoteAdd: function handleNoteAdd(data) {
+        _NoteActions2.default.createNote(data);
     },
-    handleNoteUpdate(data, spendTime) {
+    handleNoteUpdate: function handleNoteUpdate(data, spendTime) {
         data.spendTime = spendTime;
-        __WEBPACK_IMPORTED_MODULE_2__actions_NoteActions__["a" /* default */].updateNote(data);
+        _NoteActions2.default.updateNote(data);
     },
-    handleNoteDelete(note) {
-        __WEBPACK_IMPORTED_MODULE_2__actions_NoteActions__["a" /* default */].deleteNote(note.id);
+    handleNoteDelete: function handleNoteDelete(note) {
+        _NoteActions2.default.deleteNote(note.id);
     },
-
-    render() {
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    render: function render() {
+        return _react2.default.createElement(
             'div',
             { className: 'App' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            _react2.default.createElement(
                 'h2',
                 { className: 'App__header' },
                 'Notes App'
             ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__noteEditor_NoteEditor__["a" /* default */], { onNoteAdd: this.handleNoteAdd }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__noteGridShortTerm_NoteGridShortTerm__["a" /* default */], {
+            _react2.default.createElement(_NoteEditor2.default, { onNoteAdd: this.handleNoteAdd }),
+            _react2.default.createElement(_NoteGridShortTerm2.default, {
                 longTermTasks: this.state.longTermTasks,
                 shortTermTasks: this.state.shortTermTasks,
                 onNoteDelete: this.handleNoteDelete,
                 onNoteUpdate: this.handleNoteUpdate
             }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__noteGridLongTerm_NoteGridLongTerm__["a" /* default */], {
+            _react2.default.createElement(_NoteGridLongTerm2.default, {
                 longTermTasks: this.state.longTermTasks,
                 shortTermTasks: this.state.shortTermTasks,
                 onNoteDelete: this.handleNoteDelete,
@@ -23786,32 +23825,41 @@ const App = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
             })
         );
     },
-    _onChange() {
+    _onChange: function _onChange() {
         this.setState(getStateFromFlux());
     }
 });
 
-/* harmony default export */ __webpack_exports__["a"] = (App);
+exports.default = App;
 
 /***/ }),
 /* 233 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_events__ = __webpack_require__(234);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_events___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_events__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dispatcher_AppDispatcher__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__constants_AppConstants__ = __webpack_require__(125);
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _events = __webpack_require__(234);
 
+var _AppDispatcher = __webpack_require__(124);
 
-const CHANGE_EVENT = 'change';
+var _AppDispatcher2 = _interopRequireDefault(_AppDispatcher);
 
-let _notes = [];
-let _loadingError = null;
-let _isLoading = true;
+var _AppConstants = __webpack_require__(125);
+
+var _AppConstants2 = _interopRequireDefault(_AppConstants);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CHANGE_EVENT = 'change';
+
+var _notes = [];
+var _loadingError = null;
+var _isLoading = true;
 
 function formatNote(note) {
     return {
@@ -23825,40 +23873,44 @@ function formatNote(note) {
     };
 }
 
-const TasksStore = Object.assign({}, __WEBPACK_IMPORTED_MODULE_0_events__["EventEmitter"].prototype, {
-    isLoading() {
+var TasksStore = Object.assign({}, _events.EventEmitter.prototype, {
+    isLoading: function isLoading() {
         return _isLoading;
     },
-    getNotes() {
+    getNotes: function getNotes() {
         return _notes;
     },
-    getLongTermTasks() {
-        return _notes.filter(e => e.isLongTerm === true);
+    getLongTermTasks: function getLongTermTasks() {
+        return _notes.filter(function (e) {
+            return e.isLongTerm === true;
+        });
     },
-    getShortTermTasks() {
-        return _notes.filter(e => e.isLongTerm === false);
+    getShortTermTasks: function getShortTermTasks() {
+        return _notes.filter(function (e) {
+            return e.isLongTerm === false;
+        });
     },
-    emitChange() {
+    emitChange: function emitChange() {
         this.emit(CHANGE_EVENT);
     },
-    addChangeListener(callback) {
+    addChangeListener: function addChangeListener(callback) {
         this.on(CHANGE_EVENT, callback);
     },
-    removeChangeListener(callback) {
+    removeChangeListener: function removeChangeListener(callback) {
         this.removeListener(CHANGE_EVENT, callback);
     }
 });
 
-__WEBPACK_IMPORTED_MODULE_1__dispatcher_AppDispatcher__["a" /* default */].register(function (action) {
+_AppDispatcher2.default.register(function (action) {
     switch (action.type) {
-        case __WEBPACK_IMPORTED_MODULE_2__constants_AppConstants__["a" /* default */].LOAD_NOTES_REQUEST:
+        case _AppConstants2.default.LOAD_NOTES_REQUEST:
             {
                 _isLoading = true;
 
                 TasksStore.emitChange();
                 break;
             }
-        case __WEBPACK_IMPORTED_MODULE_2__constants_AppConstants__["a" /* default */].LOAD_NOTES_SUCCESS:
+        case _AppConstants2.default.LOAD_NOTES_SUCCESS:
             {
                 _isLoading = false;
 
@@ -23868,7 +23920,7 @@ __WEBPACK_IMPORTED_MODULE_1__dispatcher_AppDispatcher__["a" /* default */].regis
                 TasksStore.emitChange();
                 break;
             }
-        case __WEBPACK_IMPORTED_MODULE_2__constants_AppConstants__["a" /* default */].LOAD_NOTES_FAIL:
+        case _AppConstants2.default.LOAD_NOTES_FAIL:
             {
                 _loadingError = action.error;
 
@@ -23884,7 +23936,7 @@ __WEBPACK_IMPORTED_MODULE_1__dispatcher_AppDispatcher__["a" /* default */].regis
     }
 });
 
-/* harmony default export */ __webpack_exports__["a"] = (TasksStore);
+exports.default = TasksStore;
 
 /***/ }),
 /* 234 */
@@ -24510,70 +24562,112 @@ module.exports = keyMirror;
 
 /***/ }),
 /* 238 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants_AppConstants__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dispatcher_AppDispatcher__ = __webpack_require__(124);
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _api = __webpack_require__(239);
 
-const NoteActions = {
-    loadNotes() {
-        __WEBPACK_IMPORTED_MODULE_2__dispatcher_AppDispatcher__["a" /* default */].dispatch({
-            type: __WEBPACK_IMPORTED_MODULE_1__constants_AppConstants__["a" /* default */].LOAD_NOTES_REQUEST
+var _api2 = _interopRequireDefault(_api);
+
+var _AppConstants = __webpack_require__(125);
+
+var _AppConstants2 = _interopRequireDefault(_AppConstants);
+
+var _AppDispatcher = __webpack_require__(124);
+
+var _AppDispatcher2 = _interopRequireDefault(_AppDispatcher);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var NoteActions = {
+    loadNotes: function loadNotes() {
+        _AppDispatcher2.default.dispatch({
+            type: _AppConstants2.default.LOAD_NOTES_REQUEST
         });
 
-        __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].listNotes().then(({ data }) => __WEBPACK_IMPORTED_MODULE_2__dispatcher_AppDispatcher__["a" /* default */].dispatch({
-            type: __WEBPACK_IMPORTED_MODULE_1__constants_AppConstants__["a" /* default */].LOAD_NOTES_SUCCESS,
-            notes: data
-        })).catch(err => __WEBPACK_IMPORTED_MODULE_2__dispatcher_AppDispatcher__["a" /* default */].dispatch({
-            type: __WEBPACK_IMPORTED_MODULE_1__constants_AppConstants__["a" /* default */].LOAD_NOTES_FAIL,
-            error: err
-        }));
+        _api2.default.listNotes().then(function (_ref) {
+            var data = _ref.data;
+            return _AppDispatcher2.default.dispatch({
+                type: _AppConstants2.default.LOAD_NOTES_SUCCESS,
+                notes: data
+            });
+        }).catch(function (err) {
+            return _AppDispatcher2.default.dispatch({
+                type: _AppConstants2.default.LOAD_NOTES_FAIL,
+                error: err
+            });
+        });
     },
-    createNote(note) {
-        __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].createNote(note).then(() => this.loadNotes()).catch(err => console.error(err));
+    createNote: function createNote(note) {
+        var _this = this;
+
+        _api2.default.createNote(note).then(function () {
+            return _this.loadNotes();
+        }).catch(function (err) {
+            return console.error(err);
+        });
     },
-    deleteNote(noteId) {
-        __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].deleteNote(noteId).then(() => this.loadNotes()).catch(err => console.error(err));
+    deleteNote: function deleteNote(noteId) {
+        var _this2 = this;
+
+        _api2.default.deleteNote(noteId).then(function () {
+            return _this2.loadNotes();
+        }).catch(function (err) {
+            return console.error(err);
+        });
     },
-    updateNote(note) {
-        __WEBPACK_IMPORTED_MODULE_0__api__["a" /* default */].updateNote(note).then(() => this.loadNotes()).catch(err => console.error(err));
+    updateNote: function updateNote(note) {
+        var _this3 = this;
+
+        _api2.default.updateNote(note).then(function () {
+            return _this3.loadNotes();
+        }).catch(function (err) {
+            return console.error(err);
+        });
     }
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (NoteActions);
+exports.default = NoteActions;
 
 /***/ }),
 /* 239 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__etc_configs_json__ = __webpack_require__(259);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__etc_configs_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__etc_configs_json__);
 
 
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-    listNotes() {
-        return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(`${__WEBPACK_IMPORTED_MODULE_1__etc_configs_json__["apiPrefix"]}/notes`);
-    },
-    createNote(data) {
-        return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(`${__WEBPACK_IMPORTED_MODULE_1__etc_configs_json__["apiPrefix"]}/notes`, data);
-    },
-    deleteNote(noteId) {
-        return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.delete(`${__WEBPACK_IMPORTED_MODULE_1__etc_configs_json__["apiPrefix"]}/notes/${noteId}`);
-    },
-    updateNote(data) {
-        return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(`${__WEBPACK_IMPORTED_MODULE_1__etc_configs_json__["apiPrefix"]}/notesUpdateSendData`, data);
-    }
+Object.defineProperty(exports, "__esModule", {
+    value: true
 });
+
+var _axios = __webpack_require__(240);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _configs = __webpack_require__(259);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    listNotes: function listNotes() {
+        return _axios2.default.get(_configs.apiPrefix + '/notes');
+    },
+    createNote: function createNote(data) {
+        return _axios2.default.post(_configs.apiPrefix + '/notes', data);
+    },
+    deleteNote: function deleteNote(noteId) {
+        return _axios2.default.delete(_configs.apiPrefix + '/notes/' + noteId);
+    },
+    updateNote: function updateNote(data) {
+        return _axios2.default.post(_configs.apiPrefix + '/notesUpdateSendData', data);
+    }
+};
 
 /***/ }),
 /* 240 */
@@ -25453,7 +25547,7 @@ module.exports = function spread(callback) {
 /* 259 */
 /***/ (function(module, exports) {
 
-module.exports = {"apiPrefix":"http://localhost:8080","serverPort":8080,"db":{"name":"notes","host":"localhost","port":27017}}
+module.exports = {"apiPrefix":"http://localhost:5000","serverPort":5000,"db":{"name":"notes","host":"localhost","port":27017}}
 
 /***/ }),
 /* 260 */
@@ -25597,62 +25691,75 @@ module.exports = function (css) {
 
 /***/ }),
 /* 263 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_masonry_component__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_masonry_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_masonry_component__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__note_Note__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__NoteGridLongTerm_less__ = __webpack_require__(389);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__NoteGridLongTerm_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__NoteGridLongTerm_less__);
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _react = __webpack_require__(9);
 
+var _react2 = _interopRequireDefault(_react);
 
+var _reactMasonryComponent = __webpack_require__(131);
 
-const NoteGridLongTerm = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
-    render() {
-        const masonryOptions = {
+var _reactMasonryComponent2 = _interopRequireDefault(_reactMasonryComponent);
+
+var _Note = __webpack_require__(158);
+
+var _Note2 = _interopRequireDefault(_Note);
+
+__webpack_require__(389);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var NoteGridLongTerm = _react2.default.createClass({
+    render: function render() {
+        var _this = this;
+
+        var masonryOptions = {
             itemSelector: '.Note',
             columnWidth: 250,
             gutter: 10,
             isFitWidth: true
         };
 
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        return _react2.default.createElement(
             'div',
             { className: 'NotesGridLongTerm' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            _react2.default.createElement(
                 'h2',
                 null,
                 'Long Term Tasks'
             ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_1_react_masonry_component___default.a,
+            _react2.default.createElement(
+                _reactMasonryComponent2.default,
                 {
                     options: masonryOptions
                 },
-                this.props.longTermTasks.map(note => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_2__note_Note__["a" /* default */],
-                    {
-                        key: note.id,
-                        title: note.title,
-                        spendTime: note.spendTime,
-                        onDelete: this.props.onNoteDelete.bind(null, note),
-                        onUpdate: this.props.onNoteUpdate.bind(null, note),
-                        color: note.color
-                    },
-                    note.text
-                ))
+                this.props.longTermTasks.map(function (note) {
+                    return _react2.default.createElement(
+                        _Note2.default,
+                        {
+                            key: note.id,
+                            title: note.title,
+                            spendTime: note.spendTime,
+                            onDelete: _this.props.onNoteDelete.bind(null, note),
+                            onUpdate: _this.props.onNoteUpdate.bind(null, note),
+                            color: note.color
+                        },
+                        note.text
+                    );
+                })
             )
         );
     }
 });
 
-/* harmony default export */ __webpack_exports__["a"] = (NoteGridLongTerm);
+exports.default = NoteGridLongTerm;
 
 /***/ }),
 /* 264 */
@@ -34719,29 +34826,35 @@ exports.push([module.i, ".Note {\n  position: relative;\n  width: 250px;\n  heig
 
 /***/ }),
 /* 384 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_fontawesome__ = __webpack_require__(385);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_fontawesome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_fontawesome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__SpendTime_less__ = __webpack_require__(387);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__SpendTime_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__SpendTime_less__);
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _react = __webpack_require__(9);
 
+var _react2 = _interopRequireDefault(_react);
 
-const formattedSeconds = sec => {
-    let date = new Date(null);
+var _reactFontawesome = __webpack_require__(385);
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
+__webpack_require__(387);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var formattedSeconds = function formattedSeconds(sec) {
+    var date = new Date(null);
     date.setSeconds(sec);
     return date.toISOString().substr(11, 8);
 };
 
-const SpendTime = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
-
-    getInitialState() {
+var SpendTime = _react2.default.createClass({
+    getInitialState: function getInitialState() {
         this.incrementer = null;
 
         return {
@@ -34751,21 +34864,23 @@ const SpendTime = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
             isDisabledStart: false
         };
     },
+    handleStartClick: function handleStartClick() {
+        var _this = this;
 
-    handleStartClick() {
-        this.incrementer = setInterval(() => this.setState({
-            spendTime: this.state.spendTime + 1
-        }), 1000);
+        this.incrementer = setInterval(function () {
+            return _this.setState({
+                spendTime: _this.state.spendTime + 1
+            });
+        }, 1000);
         this.setState({
             isDisabledStart: true,
             isDisablePause: false
         });
-        setInterval(() => {
-            this.props.onUpdate(this.state.spendTime);
+        setInterval(function () {
+            _this.props.onUpdate(_this.state.spendTime);
         }, 10000);
     },
-
-    handlePauseClick() {
+    handlePauseClick: function handlePauseClick() {
         clearInterval(this.incrementer);
         this.setState({
             lastClearedIncrementer: this.incrementer,
@@ -34774,30 +34889,29 @@ const SpendTime = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
         });
         this.props.onUpdate(this.state.spendTime);
     },
-
-    render() {
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    render: function render() {
+        return _react2.default.createElement(
             'div',
             { className: 'SpendTime' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            _react2.default.createElement(
                 'button',
                 {
                     className: 'SpendTime__start',
                     disabled: this.state.isDisabledStart,
                     onClick: this.handleStartClick
                 },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_fontawesome___default.a, { name: 'far fa-play-circle' })
+                _react2.default.createElement(_reactFontawesome2.default, { name: 'far fa-play-circle' })
             ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            _react2.default.createElement(
                 'button',
                 {
                     className: 'SpendTime__pause',
                     disabled: this.state.isDisablePause,
                     onClick: this.handlePauseClick
                 },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_fontawesome___default.a, { name: 'far fa-pause-circle' })
+                _react2.default.createElement(_reactFontawesome2.default, { name: 'far fa-pause-circle' })
             ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            _react2.default.createElement(
                 'span',
                 { className: 'stopwatch-timer' },
                 formattedSeconds(this.state.spendTime || 0)
@@ -34806,7 +34920,7 @@ const SpendTime = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
     }
 });
 
-/* harmony default export */ __webpack_exports__["a"] = (SpendTime);
+exports.default = SpendTime;
 
 /***/ }),
 /* 385 */
@@ -35069,62 +35183,75 @@ exports.push([module.i, ".NotesGridLongTerm {\n  float: right;\n  width: 50%;\n 
 
 /***/ }),
 /* 391 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_masonry_component__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_masonry_component___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_masonry_component__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__note_Note__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__NoteGridShortTerm_less__ = __webpack_require__(392);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__NoteGridShortTerm_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__NoteGridShortTerm_less__);
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _react = __webpack_require__(9);
 
+var _react2 = _interopRequireDefault(_react);
 
+var _reactMasonryComponent = __webpack_require__(131);
 
-const NoteGridShortTerm = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
-    render() {
-        const masonryOptions = {
+var _reactMasonryComponent2 = _interopRequireDefault(_reactMasonryComponent);
+
+var _Note = __webpack_require__(158);
+
+var _Note2 = _interopRequireDefault(_Note);
+
+__webpack_require__(392);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var NoteGridShortTerm = _react2.default.createClass({
+    render: function render() {
+        var _this = this;
+
+        var masonryOptions = {
             itemSelector: '.Note',
             columnWidth: 250,
             gutter: 10,
             isFitWidth: true
         };
 
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        return _react2.default.createElement(
             'div',
             { className: 'NotesGridShortTerm' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            _react2.default.createElement(
                 'h2',
                 null,
                 'Short Term Tasks'
             ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_1_react_masonry_component___default.a,
+            _react2.default.createElement(
+                _reactMasonryComponent2.default,
                 {
                     options: masonryOptions
                 },
-                this.props.shortTermTasks.map(note => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_2__note_Note__["a" /* default */],
-                    {
-                        key: note.id,
-                        title: note.title,
-                        spendTime: note.spendTime,
-                        onDelete: this.props.onNoteDelete.bind(null, note),
-                        onUpdate: this.props.onNoteUpdate.bind(null, note),
-                        color: note.color
-                    },
-                    note.text
-                ))
+                this.props.shortTermTasks.map(function (note) {
+                    return _react2.default.createElement(
+                        _Note2.default,
+                        {
+                            key: note.id,
+                            title: note.title,
+                            spendTime: note.spendTime,
+                            onDelete: _this.props.onNoteDelete.bind(null, note),
+                            onUpdate: _this.props.onNoteUpdate.bind(null, note),
+                            color: note.color
+                        },
+                        note.text
+                    );
+                })
             )
         );
     }
 });
 
-/* harmony default export */ __webpack_exports__["a"] = (NoteGridShortTerm);
+exports.default = NoteGridShortTerm;
 
 /***/ }),
 /* 392 */
@@ -35173,46 +35300,52 @@ exports.push([module.i, ".NotesGridShortTerm {\n  float: left;\n  width: 50%;\n 
 
 /***/ }),
 /* 394 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__NoteEditor_less__ = __webpack_require__(395);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__NoteEditor_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__NoteEditor_less__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__colorPiker_ColorPiker__ = __webpack_require__(397);
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _react = __webpack_require__(9);
 
+var _react2 = _interopRequireDefault(_react);
 
-const initialNote = {
+__webpack_require__(395);
+
+var _ColorPiker = __webpack_require__(397);
+
+var _ColorPiker2 = _interopRequireDefault(_ColorPiker);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var initialNote = {
     title: '',
     text: '',
     color: '#fff',
     isLongTerm: false
 };
 
-const NoteEditor = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
-    getInitialState() {
+var NoteEditor = _react2.default.createClass({
+    getInitialState: function getInitialState() {
         return initialNote;
     },
-
-    handleTextChange(event) {
+    handleTextChange: function handleTextChange(event) {
         this.setState({ text: event.target.value });
     },
-    handleTitleChange(event) {
+    handleTitleChange: function handleTitleChange(event) {
         this.setState({ title: event.target.value });
     },
-    handleIsLongTermChange(event) {
+    handleIsLongTermChange: function handleIsLongTermChange(event) {
         this.setState({ isLongTerm: event.target.checked });
     },
-    handleColorChange(color) {
-        this.setState({ color });
+    handleColorChange: function handleColorChange(color) {
+        this.setState({ color: color });
     },
-
-    handleNoteAdd() {
-        const newNote = {
+    handleNoteAdd: function handleNoteAdd() {
+        var newNote = {
             title: this.state.title,
             text: this.state.text,
             color: this.state.color,
@@ -35224,44 +35357,43 @@ const NoteEditor = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
         this.setState(initialNote);
         document.getElementById('NoteEditor__isLongTerm').checked = false;
     },
-
-    render() {
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    render: function render() {
+        return _react2.default.createElement(
             'div',
             { className: 'NoteEditor' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+            _react2.default.createElement('input', {
                 type: 'text',
                 className: 'NoteEditor__title',
                 placeholder: 'Enter Title',
                 value: this.state.title,
                 onChange: this.handleTitleChange
             }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            _react2.default.createElement(
                 'label',
                 { className: 'NoteEditor__isLongTerm' },
                 'Long term?',
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                _react2.default.createElement('input', {
                     type: 'checkbox',
                     id: 'NoteEditor__isLongTerm',
                     title: 'Is it long term task?',
                     onChange: this.handleIsLongTermChange
                 })
             ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('textarea', {
+            _react2.default.createElement('textarea', {
                 placeholder: 'Enter Note Text',
                 rows: 5,
                 className: 'NoteEditor__text',
                 value: this.state.text,
                 onChange: this.handleTextChange
             }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            _react2.default.createElement(
                 'div',
                 { className: 'NoteEditor__footer' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__colorPiker_ColorPiker__["a" /* default */], {
+                _react2.default.createElement(_ColorPiker2.default, {
                     value: this.state.color,
                     onChange: this.handleColorChange
                 }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                _react2.default.createElement(
                     'button',
                     {
                         className: 'NoteEditor__button',
@@ -35275,7 +35407,7 @@ const NoteEditor = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
     }
 });
 
-/* harmony default export */ __webpack_exports__["a"] = (NoteEditor);
+exports.default = NoteEditor;
 
 /***/ }),
 /* 395 */
@@ -35324,38 +35456,49 @@ exports.push([module.i, ".NoteEditor {\n  width: 100%;\n  max-width: 600px;\n  m
 
 /***/ }),
 /* 397 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames__ = __webpack_require__(398);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_classnames__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ColorPiker_less__ = __webpack_require__(399);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ColorPiker_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__ColorPiker_less__);
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _react = __webpack_require__(9);
 
+var _react2 = _interopRequireDefault(_react);
 
-const COLORS = ['#fff', '#80d8ff', '#ffff8d', '#ff8a80', '#ccff90', '#cfd8dc', '#ffd180', '#dc96fb'];
+var _classnames = __webpack_require__(398);
 
-const ColorPicker = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createClass({
-    render() {
-        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+var _classnames2 = _interopRequireDefault(_classnames);
+
+__webpack_require__(399);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var COLORS = ['#fff', '#80d8ff', '#ffff8d', '#ff8a80', '#ccff90', '#cfd8dc', '#ffd180', '#dc96fb'];
+
+var ColorPicker = _react2.default.createClass({
+    render: function render() {
+        var _this = this;
+
+        return _react2.default.createElement(
             'div',
             { className: 'ColorPicker' },
-            COLORS.map(color => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', {
-                key: color,
-                className: __WEBPACK_IMPORTED_MODULE_1_classnames___default()('ColorPicker__swatch', { selected: this.props.value === color }),
-                style: { background: color },
-                onClick: this.props.onChange.bind(null, color)
-            }))
+            COLORS.map(function (color) {
+                return _react2.default.createElement('div', {
+                    key: color,
+                    className: (0, _classnames2.default)('ColorPicker__swatch', { selected: _this.props.value === color }),
+                    style: { background: color },
+                    onClick: _this.props.onChange.bind(null, color)
+                });
+            })
         );
     }
 });
 
-/* harmony default export */ __webpack_exports__["a"] = (ColorPicker);
+exports.default = ColorPicker;
 
 /***/ }),
 /* 398 */

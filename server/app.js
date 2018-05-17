@@ -12,6 +12,9 @@ db.setUpConnection();
 
 const app = express();
 
+const normalizePort = port => parseInt(port, 10)
+const PORT = normalizePort(process.env.port, serverPort)
+
 app.use(bodyParser.json());
 app.use(cors({origin: '*'}));
 

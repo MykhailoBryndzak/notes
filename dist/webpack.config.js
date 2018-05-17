@@ -6,7 +6,7 @@ var path = require('path');
 module.exports = {
     entry: "./client/main.js",
     output: {
-        path: path.resolve(__dirname, 'public/build'),
+        path: path.resolve(__dirname, 'server/public/build'),
         filename: "bundle.js"
     },
     resolve: {

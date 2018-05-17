@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import cool from 'cool-ascii-faces';
-const path = require('path')
+const path = require('path');
 
 import {serverPort} from '../etc/configs.json';
 
@@ -13,7 +13,7 @@ db.setUpConnection();
 const app = express();
 
 const normalizePort = port => parseInt(port, 10)
-const PORT = normalizePort(process.env.port, serverPort)
+const PORT = normalizePort(process.env.port || serverPort)
 
 app.use(bodyParser.json());
 app.use(cors({origin: '*'}));

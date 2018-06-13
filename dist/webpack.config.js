@@ -49,7 +49,12 @@ module.exports = {
             test: /\.json$/,
             loader: "json-loader"
         }]
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'server/public'),
+        compress: true,
+        port: 9000,
+        open: true
     }
-
 };
 //# sourceMappingURL=webpack.config.js.map

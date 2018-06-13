@@ -6,8 +6,8 @@
   "scripts": {
     "clean": "rm -rf server/public/build lib lib-esm",
     "server": "babel-node server/app.js --presets es2015,stage-2",
-    "dev": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 8090 --host 0.0.0.0",
-    "build": "npm run clean && webpack"
+    "build": "npm run clean && webpack",
+    "dev": "webpack-dev-server"
   },
   "author": "Mykhailo Bryndzak",
   "license": "MIT",

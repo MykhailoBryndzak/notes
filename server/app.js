@@ -32,10 +32,10 @@ app.post('/notesUpdateSendData', (req, res) => {
 });
 app.get('/cool', (req, res) => res.send(cool()));
 
-app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+    res.sendFile(path.join(__dirname, 'public', 'index.html'))
 });
 
 const server = app.listen(PORT, () => {

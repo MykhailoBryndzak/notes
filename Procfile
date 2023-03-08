@@ -1,2 +1,2 @@
-web: babel-node server/app.js --presets @babel/preset-env
+web: npm run build && npm run server
 

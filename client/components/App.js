@@ -17,29 +17,28 @@ function getStateFromFlux() {
     }
 }
 
-const App = React.createClass({
-    getInitialState() {
-        return getStateFromFlux();
-    },
+export default class App extends React.Component {
+    state = getStateFromFlux();
+    
     componentWillMount() {
         NoteActions.loadNotes();
-    },
+    }
     componentDidMount() {
         NoteStore.addChangeListener(this._onChange)
-    },
+    }
     componentWillUnmount() {
         NoteStore.removeChangeListener(this._onChage)
-    },
+    }
     handleNoteAdd(data) {
         NoteActions.createNote(data);
-    },
+    }
     handleNoteUpdate(data, spendTime) {
         data.spendTime = spendTime;
         NoteActions.updateNote(data);
-    },
+    }
     handleNoteDelete(note) {
         NoteActions.deleteNote(note.id);
-    },
+    }
 
     render() {
         return (
@@ -48,26 +47,25 @@ const App = React.createClass({
                 <NoteEditor onNoteAdd={this.handleNoteAdd}/>
 
                 <NoteGridShortTerm
-                    longTermTasks={this.state.longTermTasks}
-                    shortTermTasks={this.state.shortTermTasks}
+                    longTermTasks={this.state?.longTermTasks}
+                    shortTermTasks={this.state?.shortTermTasks}
                     onNoteDelete={this.handleNoteDelete}
                     onNoteUpdate={this.handleNoteUpdate}
                 />
                 <NoteGridLongTerm
-                    longTermTasks={this.state.longTermTasks}
-                    shortTermTasks={this.state.shortTermTasks}
+                    longTermTasks={this.state?.longTermTasks}
+                    shortTermTasks={this.state?.shortTermTasks}
                     onNoteDelete={this.handleNoteDelete}
                     onNoteUpdate={this.handleNoteUpdate}
                 />
             </div>
         );
-    },
-    _onChange() {
+    }
+    _onChange = () => {
         this.setState(getStateFromFlux());
     }
-});
+};
 
-export default App;
 
 
 

@@ -10,37 +10,36 @@ const initialNote = {
     isLongTerm: false
 }
 
-const NoteEditor = React.createClass({
-    getInitialState() {
-        return initialNote
-    },
+export default class NoteEditor extends React.Component {
+    state = initialNote
 
-    handleTextChange(event) {
+    handleTextChange = event => {
         this.setState({text: event.target.value});
-    },
-    handleTitleChange(event) {
+    }
+    handleTitleChange = event => {
         this.setState({title: event.target.value});
-    },
-    handleIsLongTermChange(event) {
+    }
+    handleIsLongTermChange = event => {
         this.setState({isLongTerm: event.target.checked});
-    },
-    handleColorChange(color) {
-        this.setState({color});
-    },
+    }
+    handleColorChange = () => {
+        this.setState({color: this.state?.color});
+    }
 
-    handleNoteAdd() {
+    handleNoteAdd = event => {
       const newNote = {
-          title: this.state.title,
-          text: this.state.text,
-          color: this.state.color,
-          isLongTerm: this.state.isLongTerm
+          title: this.state?.title,
+          text: this.state?.text,
+          color: this.state?.color,
+          isLongTerm: this.state?.isLongTerm
       };
 
-      this.props.onNoteAdd(newNote);
+      debugger;
+      this.props?.onNoteAdd(newNote);
 
       this.setState(initialNote);
       document.getElementById('NoteEditor__isLongTerm').checked = false;
-    },
+    }
 
     render() {
         return (
@@ -49,7 +48,7 @@ const NoteEditor = React.createClass({
                     type="text"
                     className="NoteEditor__title"
                     placeholder="Enter Title"
-                    value={this.state.title}
+                    value={this.state?.title}
                     onChange={this.handleTitleChange}
                 />
                 <label className='NoteEditor__isLongTerm'>
@@ -65,18 +64,18 @@ const NoteEditor = React.createClass({
                     placeholder="Enter Note Text"
                     rows={5}
                     className="NoteEditor__text"
-                    value={this.state.text}
+                    value={this.state?.text}
                     onChange={this.handleTextChange}
                 />
                 <div className="NoteEditor__footer">
 
                     <ColorPiker
-                        value={this.state.color}
+                        value={this.state?.color}
                         onChange={this.handleColorChange}
                     />
                     <button
                         className="NoteEditor__button"
-                        disabled={!this.state.text}
+                        disabled={!this.state?.text}
                         onClick={this.handleNoteAdd}
                     >
                         Add
@@ -85,11 +84,4 @@ const NoteEditor = React.createClass({
             </div>
         )
     }
-});
-
-export default NoteEditor;
-
-
-
-
-
+};

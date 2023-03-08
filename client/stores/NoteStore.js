@@ -12,7 +12,7 @@ let _isLoading = true;
 function formatNote(note) {
     return {
         id: note._id,
-        title: note.title,
+        title: note?.title,
         text: note.text,
         color: note.color || '#fff',
         createdAt: note.createAt,
@@ -56,7 +56,7 @@ AppDispatcher.register(function (action) {
         case AppConstants.LOAD_NOTES_SUCCESS: {
             _isLoading = false;
 
-            _notes = action.notes.map(formatNote);
+            _notes = action.notes?.map(formatNote);
             _loadingError = null;
 
             TasksStore.emitChange();

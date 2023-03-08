@@ -16,7 +16,7 @@ export function listNotes() {
 
 export function creteNote(data) {
     const note = new Note({
-        title: data.title,
+        title: data?.title,
         text: data.text,
         color: data.color,
         createAt: new Date(),

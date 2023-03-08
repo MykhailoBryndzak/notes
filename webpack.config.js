@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path')
 
 module.exports = {
+    mode: 'development',
     entry: "./client/main.js",
     output: {
         path: path.resolve(__dirname, 'server/public/build'),
@@ -15,44 +16,60 @@ module.exports = {
     devtool: 'source-map',
 
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
-                loader: "babel-loader",
-                exclude: [/node_modules/, /public/]
+                exclude: [/node_modules/, /public/],
+                use: {
+                    loader: "babel-loader",
+                }
             }, {
                 test: /\.css$/,
-                loader: "style-loader!css-loader!autoprefixer-loader",
-                exclude: [/node_modules/, /public/]
+                exclude: [/node_modules/, /public/],
+                use: [
+                    {loader:  "style-loader"},
+                    {loader: "css-loader"},
+                ]
             }, {
                 test: /\.less$/,
-                loader: "style-loader!css-loader!autoprefixer-loader!less-loader",
-                exclude: [/node_modules/, /public/]
+                exclude: [/node_modules/, /public/],
+                use: [
+                    {loader:"style-loader"},
+                    {loader:"css-loader"},
+                    {loader:"less-loader"}
+                ]
             }, {
                 test: /\.jsx$/,
-                loader: "react-hot!babel-loader",
-                exclude: [/node_modules/, /public/]
+                exclude: [/node_modules/, /public/],
+                use: [
+                    {loader:"react-hot"},
+                    {loader:"babel-loader"}
+                ]
             }, {
                 test: /\.gif$/,
-                loader: "url-loader?limit=1000&imetype=image/gif-loader"
+                use: [
+                    {loader:"url-loader"},
+                ]
             }, {
                 test: /\.jpg$/,
-                loader: "url-loader?limit=1000&imetype=image/jpg-loader"
+                use: [
+                    {loader:"url-loader"},
+                ]
             }, {
                 test: /\.png$/,
-                loader: "url-loader?limit=1000&imetype=image/png-loader"
+                use: [
+                    {loader:"url-loader"},
+                ]
             }, {
                 test: /\.svg/,
-                loader: "url-loader?limit=26000&imetype=image/svg+xml"
-            }, {
-                test: /\.json$/,
-                loader: "json-loader"
-            },
-
+                use: [
+                    {loader:"url-loader"},
+                ]
+            }
         ]
     },
     devServer: {
-        contentBase: path.join(__dirname, 'server/public'),
+        static: path.join(__dirname, 'server/public'),
         compress: true,
         port: 9000,
         open: true

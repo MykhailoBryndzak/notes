@@ -57,4 +57,4 @@ module.exports = {
         open: true
     }
 };
-//# sourceMappingURL=webpack.config.js.map
+//# sourceMappingURL=webpack.config.js?.map

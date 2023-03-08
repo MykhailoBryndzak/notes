@@ -9,39 +9,34 @@ const formattedSeconds = (sec) => {
     return date.toISOString().substr(11, 8);
 }
 
-const SpendTime = React.createClass({
+export default class SpendTime extends React.Component {
+    state = {
+        spendTime: this.props?.spendTime,
+        lastClearedIncrementer: null,
+        isDisablePause: true,
+        isDisabledStart: false
+    }
 
-    getInitialState() {
-        this.incrementer = null;
-
-        return {
-            spendTime: this.props.spendTime,
-            lastClearedIncrementer: null,
-            isDisablePause: true,
-            isDisabledStart: false
-        };
-    },
-
-    handleStartClick() {
+    handleStartClick = () => {
         this.incrementer = setInterval(() => this.setState({
-            spendTime: this.state.spendTime + 1
+            spendTime: this.state?.spendTime + 1
         }), 1000);
         this.setState({
             isDisabledStart: true,
             isDisablePause: false
         });
-        setInterval(() => { this.props.onUpdate(this.state.spendTime)}, 10000)
-    },
+        setInterval(() => { this.props?.onUpdate(this.state?.spendTime)}, 10000)
+    }
 
-    handlePauseClick() {
+    handlePauseClick = () => {
         clearInterval(this.incrementer);
         this.setState({
             lastClearedIncrementer: this.incrementer,
             isDisabledStart: false,
             isDisablePause: true
         });
-        this.props.onUpdate(this.state.spendTime)
-    },
+        this.props?.onUpdate(this.state?.spendTime)
+    }
 
 
     render() {
@@ -49,7 +44,7 @@ const SpendTime = React.createClass({
             <div className="SpendTime">
                 <button
                     className="SpendTime__start"
-                    disabled={this.state.isDisabledStart}
+                    disabled={this.state?.isDisabledStart}
                     onClick={this.handleStartClick}
                 >
                     <FontAwesome name='far fa-play-circle'/>
@@ -57,16 +52,14 @@ const SpendTime = React.createClass({
 
                 <button
                     className="SpendTime__pause"
-                    disabled={this.state.isDisablePause}
+                    disabled={this.state?.isDisablePause}
                     onClick={this.handlePauseClick}
                 >
                     <FontAwesome name='far fa-pause-circle'/>
                 </button>
 
-                <span className="stopwatch-timer">{formattedSeconds(this.state.spendTime || 0)}</span>
+                <span className="stopwatch-timer">{formattedSeconds(this.state?.spendTime || 0)}</span>
             </div>
         );
     }
-});
-
-export default SpendTime;
+};

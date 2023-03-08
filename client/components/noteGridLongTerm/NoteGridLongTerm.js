@@ -4,15 +4,15 @@ import Masonry from 'react-masonry-component';
 import Note from '../note/Note';
 import './NoteGridLongTerm.less';
 
-const NoteGridLongTerm = React.createClass({
-    render() {
-        const masonryOptions = {
-            itemSelector: '.Note',
-            columnWidth: 250,
-            gutter: 10,
-            isFitWidth: true,
-        };
+const masonryOptions = {
+    itemSelector: '.Note',
+    columnWidth: 250,
+    gutter: 10,
+    isFitWidth: true,
+};
 
+export default class NoteGridLongTerm extends React.Component {
+    render() {
         return (
             <div className="NotesGridLongTerm">
                 <h2>Long Term Tasks</h2>
@@ -20,13 +20,13 @@ const NoteGridLongTerm = React.createClass({
                     options={masonryOptions}
                 >
                     {
-                        this.props.longTermTasks.map(note =>
+                        this.longTermTasks?.map(note =>
                             <Note
                                 key={note.id}
-                                title={note.title}
+                                title={note?.title}
                                 spendTime={note.spendTime}
-                                onDelete={this.props.onNoteDelete.bind(null, note)}
-                                onUpdate={this.props.onNoteUpdate.bind(null, note)}
+                                onDelete={this.props?.onNoteDelete.bind(null, note)}
+                                onUpdate={this.props?.onNoteUpdate.bind(null, note)}
                                 color={note.color}
                             >
                                 {note.text}
@@ -37,8 +37,4 @@ const NoteGridLongTerm = React.createClass({
             </div>
         );
     }
-});
-
-export default NoteGridLongTerm;
-
-
+};

@@ -14,23 +14,22 @@ const COLORS = [
     '#dc96fb'
 ];
 
-const ColorPicker = React.createClass({
+export default class ColorPicker extends React.Component {
+    
     render() {
         return (
             <div className="ColorPicker">
                 {
-                    COLORS.map(color =>
+                    COLORS?.map(color =>
                         <div
                             key={color}
-                            className={cx('ColorPicker__swatch', {selected: this.props.value === color})}
+                            className={cx('ColorPicker__swatch', {selected: this.props?.value === color})}
                             style={{background: color}}
-                            onClick={this.props.onChange.bind(null, color)}
+                            onClick={this.props?.onChange.bind(null, color)}
                         />
                     )
                 }
             </div>
         );
     }
-});
-
-export default ColorPicker;
+};

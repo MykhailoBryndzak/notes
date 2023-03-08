@@ -3,29 +3,28 @@ import React from 'react';
 import './Note.less';
 import SpendTime from '../spendTime/SpendTime';
 
-const Note = React.createClass({
+export default class Note extends React.Component {
+
     render() {
-        const style = {backgroundColor: this.props.color};
+        const style = {backgroundColor: this.props?.color};
 
         return (
             <div className="Note" style={style}>
-                <span className="Note__del-icon" onClick={this.props.onDelete}> x </span>
+                <span className="Note__del-icon" onClick={this.props?.onDelete}> x </span>
                 {
-                    this.props.title
+                    this.title
                         ?
-                            <h4 className="Note__title">{this.props.title}</h4>
+                            <h4 className="Note__title">{this.title}</h4>
                         :
                             null
                 }
-                <div className="Note__text">{this.props.children}</div>
+                <div className="Note__text">{this.props?.children}</div>
 
-                <SpendTime props={this.props} spendTime={this.props.spendTime} onUpdate={this.props.onUpdate}/>
+                <SpendTime props={this.props} spendTime={this.props?.spendTime} onUpdate={this.props?.onUpdate}/>
             </div>
         );
     }
-});
-
-export default Note;
+};
 
 
 
